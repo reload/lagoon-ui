@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Highlighter from 'react-highlight-words';
 
 import Box from 'components/Box';
+import VersionNumber from 'components/VersionNumber/VersionNumber';
 import ProjectLink from 'components/link/Project';
+import { sitetMetricsUrl } from 'lib/variables';
 
 import {
   ProjectsHeader,
@@ -11,6 +13,7 @@ import {
   StyledCustomer,
   StyledProject,
   StyledRoute,
+  StyledVersionNumber,
 } from './StyledProjects';
 
 /**
@@ -89,6 +92,9 @@ const Projects = ({ projects = [], initialSearch }) => {
               </StyledRoute>
             </StyledProject>
             <StyledCustomer></StyledCustomer>
+            <StyledVersionNumber>
+              <VersionNumber metricsUrl={sitetMetricsUrl(project.environments[0].route)} />
+            </StyledVersionNumber>
           </Box>
         </ProjectLink>
       ))}

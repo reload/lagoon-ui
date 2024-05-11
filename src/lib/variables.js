@@ -1,3 +1,7 @@
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+
 // Breakpoints in px
 const BP_TINY = 450;
 const BP_XS = 600;
@@ -76,3 +80,6 @@ export const fontSize = (sizeInPx, lineHeight) => `
       : ''
   }
 `;
+
+const metricsPath = publicRuntimeConfig.LAGOON_UI_METRICS_PATH;
+export const sitetMetricsUrl = host => `${host}${metricsPath}`;
