@@ -92,3 +92,10 @@ export const StyledCustomer = styled.div`
     width: calc((100vw / 16) * 6);
   }
 `;
+
+export const StyledVersionNumber = styled.div`
+  color: ${color.white};
+  align-self: center;
+  margin-left: auto;
+  padding-right: 20px;
+`;
